@@ -4,6 +4,7 @@ const getConnection = require('./db');
 const logger = createLogger({
   level: 'info',
   format: format.combine(
+    format.colorize(),
     format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
     format.printf(({ timestamp, level, message }) => {
       return `[${timestamp}] ${level.toUpperCase()}: ${message}`;
